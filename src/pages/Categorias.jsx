@@ -10,12 +10,15 @@ export function Categorias() {
   const { mostrarCategorias, buscarCategorias, buscador } =
     useCategoriasStore();
   const { dataempresa } = useEmpresaStore();
+
+  // Mostrar categorias
   const { isLoading, error } = useQuery({
     queryKey: ["mostrar categorias", dataempresa?.id],
     queryFn: () => mostrarCategorias({ id_empresa: dataempresa?.id }),
     enabled: !!dataempresa,
     refetchOnWindowFocus: false,
   });
+  
   //buscar categorias
   const {  } = useQuery({
     queryKey: ["buscar categorias", buscador],
@@ -31,5 +34,6 @@ export function Categorias() {
   if (error) {
     return <span>error...</span>;
   }
+  
   return <CategoriasTemplate />;
 }

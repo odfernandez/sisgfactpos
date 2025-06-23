@@ -9,6 +9,7 @@ import { useDetalleVentasStore } from "../../../store/DetalleVentasStore";
 import { Switch } from "../../ui/toggles/Switch";
 import { useImpresorasStore } from "../../../store/ImpresorasStore";
 import { useEditarImpresorasMutation } from "../../../tanstack/ImpresorasStack";
+
 export function PantallaCobro() {
   const [stateVerticket, setStateVerticker] = useState(false);
   const { setStatePantallaCobro, tipocobro } = useVentasStore();

@@ -17,6 +17,7 @@ import { useState } from "react";
 import { Device } from "../../../styles/breakpoints";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
+
 export function AreaDetalleventaPos() {
 
   const { dataempresa } = useEmpresaStore();

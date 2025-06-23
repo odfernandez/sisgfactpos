@@ -3,23 +3,17 @@ import { Btn1 } from "../../moleculas/Btn1";
 import { Device } from "../../../styles/breakpoints";
 import { Icon } from "@iconify/react";
 import { useDetalleVentasStore, useEmpresaStore, useVentasStore } from "../../..";
-import {FormatearNumeroDinero} from "../../../utils/Conversiones"
-import {useValidarPermisosOperativos} from "../../../hooks/useValidarPermisosOperativos"
+import {FormatearNumeroDinero} from "../../../utils/Conversiones";
+import {useValidarPermisosOperativos} from "../../../hooks/useValidarPermisosOperativos";
+
 export function TotalPos() {
   const {setStateMetodosPago} = useVentasStore()
   const {total} = useDetalleVentasStore()
   const {dataempresa} = useEmpresaStore()
   const {validarPermiso} = useValidarPermisosOperativos()
-  // const textLength = total.length;
-  // // Definir las clases CSS para diferentes longitudes de texto
-  // let textSizeClass = 'medium-text';
-  // if (textLength < 10) {
-  //   textSizeClass = 'large-text';
-  // } else if (textLength < 20) {
-  //   textSizeClass = 'medium-text';
-  // } else {
-  //   textSizeClass = 'small-text';
-  // }
+
+  // Validar permiso para cobrar venta
+  // Si no tiene permiso, no se ejecuta la función
   const validarPermisoCobrar = ()=>{
     const hasPermission = validarPermiso("Cobrar venta")
     if(!hasPermission) return;

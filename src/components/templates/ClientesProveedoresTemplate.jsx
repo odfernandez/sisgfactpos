@@ -14,6 +14,7 @@ import { useState } from "react";
 import ConfettiExplosion from "react-confetti-explosion";
 import { useLocation } from "react-router-dom";
 import { TablaClientesProveedores } from "../organismos/tablas/TablaClientesProveedores";
+
 export function ClientesProveedoresTemplate() {
   const [openRegistro, SetopenRegistro] = useState(false);
   const { dataclipro,setBuscador } = useClientesProveedoresStore();
@@ -21,7 +22,8 @@ export function ClientesProveedoresTemplate() {
   const [accion, setAccion] = useState("");
   const [dataSelect, setdataSelect] = useState([]);
   const [isExploding, setIsExploding] = useState(false);
-  const location = useLocation()
+  const location = useLocation();
+
   function nuevoRegistro() {
     const tipo= location.pathname==="/configuracion/clientes"?"cliente":"proveedor"
     setTipo(tipo)
@@ -30,6 +32,7 @@ export function ClientesProveedoresTemplate() {
     setdataSelect([]);
     setIsExploding(false)
   }
+  
   return (
     <Container>
       {openRegistro && (

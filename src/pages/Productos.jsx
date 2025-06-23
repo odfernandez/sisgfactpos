@@ -28,7 +28,8 @@ export function Productos() {
     refetchOnWindowFocus: false,
   });
   
-  // Buscar categorías
+  // Buscar productos
+  // Se usa el buscador para filtrar productos y se activa cuando se cambia el valor del buscador
   const { isLoading: isLoadingBuscarProductos } = useQuery({
     queryKey: ["buscar productos", buscador],
     queryFn: () => buscarProductos({ id_empresa: dataempresa?.id, buscador: buscador }),
@@ -43,6 +44,7 @@ export function Productos() {
     enabled: !!dataempresa,
     refetchOnWindowFocus: false,
   });
+
   // Mostrar almacenes por sucursal
   const { isLoading: isLoadingAlmacenes } = useQuery({
     queryKey: ["mostrar almacenes x sucursal", dataempresa?.id],
@@ -50,6 +52,7 @@ export function Productos() {
     enabled: !!dataempresa,
     refetchOnWindowFocus: false,
   });
+  
   // Mostrar categorías
   const { isLoading: isLoadingCategorias } = useQuery({
     queryKey: ["mostrar categorias", dataempresa?.id],

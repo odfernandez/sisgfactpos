@@ -3,9 +3,12 @@ import { ConfiguracionesTemplate, Spinner1, useUsuariosStore } from "../index";
 import {useModulosStore} from "../store/ModulosStore"
 import { usePermisosStore } from "../store/PermisosStore";
 import { useAsignacionCajaSucursalStore } from "../store/AsignacionCajaSucursalStore";
+
 export function Configuraciones() {
   const {datausuarios} = useUsuariosStore()
   const { mostrarPermisosConfiguracion } = usePermisosStore();
+
+  // Mostrar permisos de configuración
   const {  isLoading, error } = useQuery({
     queryKey: ["mostrar permisos configuracion"],
     queryFn: ()=>mostrarPermisosConfiguracion({id_usuario:datausuarios?.id}),
@@ -16,5 +19,6 @@ export function Configuraciones() {
   if(error){
     return(<span>error...</span>)
   }
+  
   return ( <ConfiguracionesTemplate />);
 }

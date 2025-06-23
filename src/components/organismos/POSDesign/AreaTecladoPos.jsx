@@ -15,11 +15,8 @@ export function AreaTecladoPos() {
   const { dataMetodosPago: datametodospago } = useMetodosPagoStore();
   const {datadetalleventa} = useDetalleVentasStore()
   const { validarPermiso } = useValidarPermisosOperativos();
-  // const { data: datametodospago } = useQuery({
-  //   queryKey: ["mostrar metodos de pago"],
-  //   queryFn: () => mostrarMetodosPago({ id_empresa: dataempresa?.id }),
-  //   enabled: !!dataempresa,
-  // });
+
+  // Validar permisos para cobrar venta
   const ValidarPermisocobrar = (p) => {
     const response = validarPermiso("Cobrar venta");
     if (!response) return;
@@ -28,6 +25,7 @@ export function AreaTecladoPos() {
   };
 
   return (
+    // Mostrar métodos de pago
     <Container stateMetodosPago={stateMetodosPago}>
       <section className="areatipopago">
         {datametodospago?.map((item, index) => {
@@ -46,15 +44,6 @@ export function AreaTecladoPos() {
         })}
       </section>
       <section className="totales">
-        {/* <div className="subtotal">
-          <span>
-            Sub total: <strong>$ 9.99</strong>{" "}
-          </span>
-          <span>IGV (18%): $ 0.00</span>
-          <span>
-            Sub total: <strong>$ 9.99</strong>{" "}
-          </span>
-        </div> */}
         <TotalPos />
       </section>
     </Container>

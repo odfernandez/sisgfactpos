@@ -14,6 +14,7 @@ import { useMovCajaStore } from "../../../../store/MovCajaStore";
 import { useMetodosPagoStore } from "../../../../store/MetodosPagoStore";
 import { useUsuariosStore } from "../../../../store/UsuariosStore";
 import { useFormattedDate } from "../../../../hooks/useFormattedDate";
+
 export function PantallaIngresoSalidaDinero() {
   const fechaActual = useFormattedDate()
   const { tipoRegistro, setStateIngresoSalida } =
@@ -120,14 +121,6 @@ export function PantallaIngresoSalidaDinero() {
             {errors.monto?.type === "required" && <p>Campon requerido</p>}
           </InputText2>
 
-          {/* <StyledDatePickerWrapper>
-            <StyledDatePicker
-              selected={startDate}
-              onChange={(date) => setStartDate(date)}
-              dateFormat="dd/MM/yyyy"
-              placeholderText="Seleccionar Fecha"
-            />
-          </StyledDatePickerWrapper> */}
           <span>Motivo (puede estar en blanco)</span>
           <InputText2>
             <textarea

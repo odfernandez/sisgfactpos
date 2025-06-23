@@ -10,6 +10,7 @@ import { v } from "../../styles/variables";
 import { TablaCategorias } from "../organismos/tablas/TablaCategorias";
 import { useState } from "react";
 import ConfettiExplosion from "react-confetti-explosion";
+
 export function CategoriasTemplate() {
   const [openRegistro, SetopenRegistro] = useState(false);
   const { datacategorias,setBuscador } = useCategoriasStore();

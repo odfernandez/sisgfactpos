@@ -14,6 +14,7 @@ import { RegistrarMetodosPago } from "../organismos/formularios/RegistrarMetodos
 import { TablaMetodosPago } from "../organismos/tablas/TablaMetodosPago";
 import { Toaster } from "sonner";
 import { useMetodosPagoStore } from "../../store/MetodosPagoStore";
+
 export function MetodosPagoTemplate() {
   const [openRegistro, SetopenRegistro] = useState(false);
   const { dataMetodosPago } = useMetodosPagoStore();

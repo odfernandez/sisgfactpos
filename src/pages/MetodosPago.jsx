@@ -7,6 +7,8 @@ import { Spinner1 } from "../components/moleculas/Spinner1";
 export function MetodosPago() {
   const { mostrarMetodosPago } = useMetodosPagoStore();
   const { dataempresa } = useEmpresaStore();
+  
+  // Mostrar métodos de pago
   const { isLoading, error } = useQuery({
     queryKey: ["mostrar metodos pago"],
     queryFn: () => mostrarMetodosPago({ id_empresa: dataempresa?.id }),
@@ -19,5 +21,6 @@ export function MetodosPago() {
   if (error) {
     return <span>error... {error.message} </span>;
   }
+  
   return <MetodosPagoTemplate />;
 }

@@ -11,7 +11,7 @@ import { useUsuariosStore } from "../store/UsuariosStore";
 import { useEditarPerfilMutation } from "../tanstack/UsuariosStack";
 export const MiPerfil = () => {
   const { datausuarios } = useUsuariosStore();
-  const {mutate,isPending} = useEditarPerfilMutation()
+  const { mutate, isPending } = useEditarPerfilMutation();
   const {
     register,
     formState: { errors },
@@ -25,12 +25,12 @@ export const MiPerfil = () => {
   });
   return (
     <Container>
-       <Toaster position="top-right" />
+      <Toaster position="top-right" />
       {isPending ? (
         <span>guardando...🐖</span>
       ) : (
         <>
-          <Title>Mi Perfil</Title> 
+          <Title>Mi Perfil</Title>
           <Avatar>
             <ContentRol>
               <span>{datausuarios?.roles?.nombre} </span>

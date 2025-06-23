@@ -14,6 +14,7 @@ import { useMetodosPagoStore } from "../../../../store/MetodosPagoStore";
 import { useMovCajaStore } from "../../../../store/MovCajaStore";
 import { useAsignacionCajaSucursalStore } from "../../../../store/AsignacionCajaSucursalStore";
 import { useCajasStore } from "../../../../store/CajasStore";
+
 export function CardListCajas({
   title,
   subtitle,
@@ -34,6 +35,9 @@ export function CardListCajas({
   const { insertarMovCaja } = useMovCajaStore();
   const {cajaSelectItem} = useCajasStore()
 
+  // Registrar movimiento de caja
+  // Se registra un movimiento de caja al aperturar la caja, con el monto de efectivo
+  // ingresado por el usuario. El movimiento se registra con el tipo "apertura"
   const registrarMovCaja = async (p) => {
     const id_metodo_pago = dataMetodosPago
       .filter((item) => item.nombre === "Efectivo")

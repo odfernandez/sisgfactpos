@@ -6,6 +6,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import { useVentasStore } from "../../../store/VentasStore";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
+
 export function MenuFlotante() {
   const [isOpen, setIsOpen] = useState(false);
   const { eliminarVenta,idventa } = useVentasStore();

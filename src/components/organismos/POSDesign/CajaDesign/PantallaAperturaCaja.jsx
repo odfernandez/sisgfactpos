@@ -15,6 +15,7 @@ import { CardListCajas } from "./CardListCajas";
 import { Device } from "../../../../styles/breakpoints";
 import { useMostrarCierreCajaPorEmpresaQuery } from "../../../../tanstack/CierresCajaStack";
 import { useCajasStore } from "../../../../store/CajasStore";
+
 export function PantallaAperturaCaja() {
   const { dataSucursalesAsignadas } = useAsignacionCajaSucursalStore();
 

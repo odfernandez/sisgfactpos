@@ -28,8 +28,6 @@ export function VisorTicketVenta({setState}) {
           <Icon className="icono" icon="fluent-emoji:monkey-face" />
         </article>
 
-        {/* <button onClick={() => onGenerateTicket("print")}>IMPRIMIR TICKET</button>
-      <button onClick={() => onGenerateTicket("b64")}>GENERAR TICKET</button> */}
         <iframe
           style={{ width: "100%", height: "100%" }}
           src={`data:application/pdf;base64,${base64}`}

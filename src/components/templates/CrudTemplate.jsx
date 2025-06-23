@@ -6,6 +6,7 @@ import ConfettiExplosion from "react-confetti-explosion";
 import { Toaster } from "sonner";
 import { BuscadorList } from "../ui/lists/BuscadorList";
 import { useGlobalStore } from "../../store/GlobalStore";
+
 export function CrudTemplate({
   FormularioRegistro,
   title,

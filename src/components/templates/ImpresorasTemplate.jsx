@@ -12,6 +12,7 @@ import { useAsignacionCajaSucursalStore } from "../../store/AsignacionCajaSucurs
 import { useState } from "react";
 import ticket from "../../reports/TicketPrueba";
 import {HeaderImpresoras} from "../organismos/ImpresorasDesign/HeaderImpresoras"
+
 export const ImpresorasTemplate = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const {
@@ -26,6 +27,7 @@ export const ImpresorasTemplate = () => {
   } = useImpresorasStore();
   const { sucursalesItemSelectAsignadas } = useAsignacionCajaSucursalStore();
   const queryClient = useQueryClient();
+  
   //mostrar impresoras por caja
   const {
     data: dataImpresorasPorCaja,
@@ -43,6 +45,7 @@ export const ImpresorasTemplate = () => {
         id_caja: sucursalesItemSelectAsignadas?.id_caja,
       }),
   });
+  
   //mostrar datos de Pc local
   const {
     data: dataPcLocal,
@@ -52,6 +55,7 @@ export const ImpresorasTemplate = () => {
     queryKey: ["mostrar datos de PC"],
     queryFn: mostrarDatosPc,
   });
+  
   //mostrar las impresoras locales
   const {
     data: dataImpresorasLocales,
@@ -62,6 +66,7 @@ export const ImpresorasTemplate = () => {
     queryFn: mostrarListaImpresoraLocales,
     enabled: !!dataPcLocal,
   });
+  
   //editar impresoras
   const { mutate: doEditar, isPending } = useMutation({
     mutationKey: ["editar impresoras"],

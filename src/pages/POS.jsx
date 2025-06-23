@@ -1,7 +1,5 @@
 import { POSTemplate, SpinnerSecundario } from "../index";
-
 import { PantallaAperturaCaja } from "../components/organismos/POSDesign/CajaDesign/PantallaAperturaCaja";
-
 import { useMostrarAperturasCajaPorUsuarioQuery } from "../tanstack/CierresCajaStack";
 import { useMostrarMetodosPagoQuery } from "../tanstack/MetodosPagoStack";
 

@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import styled from "styled-components";
 import { Buscador } from "../Buscador";
 import { Btn1 } from "../../..";
+
 export function PanelBuscador({
   setStateBuscador,
   setBuscador,

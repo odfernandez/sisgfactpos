@@ -16,6 +16,7 @@ import { useFormattedDate } from "../../../../hooks/useFormattedDate";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { BarLoader } from "react-spinners";
+
 export function PantallaConteoCaja() {
   const { cerrarSesion } = useAuthStore();
   const [montoEfectivo, setMontoEfectivo] = useState(0);

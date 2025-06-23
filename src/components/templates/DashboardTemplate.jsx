@@ -7,6 +7,7 @@ import {ChartProductosTop5} from "../organismos/DashboardDesign/ChartProductosTo
 import { CardMovimientosCajaLive } from "../organismos/DashboardDesign/CardMovimientosCajaLive";
 import {CardProductosTopMonto} from "../organismos/DashboardDesign/CardProductosTopMonto"
 import { useReportesStore } from "../../store/ReportesStore";
+
 export const DashboardTemplate = () => {
   const {totalventas,porcentajeCambio,totalCantidadDetalleVentas,totalGanancias} = useReportesStore() 
    return (

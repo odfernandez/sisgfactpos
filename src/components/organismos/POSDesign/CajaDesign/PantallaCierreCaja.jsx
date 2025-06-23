@@ -10,6 +10,7 @@ import { useMovCajaStore } from "../../../../store/MovCajaStore";
 import { FormatearNumeroDinero } from "../../../../utils/Conversiones";
 import { useEmpresaStore } from "../../../../store/EmpresaStore";
 import { PantallaConteoCaja } from "./PantallaConteoCaja";
+
 export function PantallaCierreCaja() {
   const { setStateCierraCaja, dataCierreCaja,stateConteoCaja,setStateConteoCaja } = useCierreCajaStore();
   const {

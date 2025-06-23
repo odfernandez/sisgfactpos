@@ -48,6 +48,7 @@ export function HeaderPos() {
   const buscadorRef = useRef(null);
   const fechaactual = useFormattedDate();
 
+  // Funciones para manejar el buscador
   function focusclick() {
     buscadorRef.current.focus();
     buscadorRef.current.value.trim() === ""
@@ -64,6 +65,7 @@ export function HeaderPos() {
     }
   }
 
+  // Insertar ventas
   async function insertarventas() {
     if (idventa === 0) {
       const pventas = {
@@ -85,6 +87,8 @@ export function HeaderPos() {
     buscadorRef.current.focus();
     setCantidadInput(1);
   }
+
+  // Insertar detalle de ventas
   async function insertarDVentas(idventa) {
     const productosItemSelect =
       useProductosStore.getState().productosItemSelect;
@@ -115,6 +119,7 @@ export function HeaderPos() {
       queryClient.invalidateQueries(["mostrar detalle venta"]);
     },
   });
+  
   //validar cantidad
   const ValidarCantidad = (e) => {
     const value = Math.max(0, parseFloat(e.target.value));

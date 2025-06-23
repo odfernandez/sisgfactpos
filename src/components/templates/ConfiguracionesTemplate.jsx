@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useModulosStore } from "../../index";
 import { usePermisosStore } from "../../store/PermisosStore";
+
 export function ConfiguracionesTemplate() {
   const {dataPermisosConfiguracion} = usePermisosStore();
   useEffect(() => {

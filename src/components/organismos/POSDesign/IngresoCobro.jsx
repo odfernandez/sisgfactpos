@@ -24,6 +24,7 @@ import { useImpresorasStore } from "../../../store/ImpresorasStore";
 import ticket from "../../../reports/TicketVenta";
 import { RegistrarClientesProveedores } from "../formularios/RegistrarClientesProveedores";
 import { useGlobalStore } from "../../../store/GlobalStore";
+
 export const IngresoCobro = forwardRef((props, ref) => {
   const fechaActual = useFormattedDate();
   const {
@@ -35,6 +36,7 @@ export const IngresoCobro = forwardRef((props, ref) => {
     dataventaconfirmada,
   } = useVentasStore();
   const { total } = useDetalleVentasStore();
+  
   //Valores a calcular
   const [stateBuscadorClientes, setStateBuscadorClientes] = useState(false);
   const [precioVenta, setPrecioVenta] = useState(total);
@@ -48,11 +50,14 @@ export const IngresoCobro = forwardRef((props, ref) => {
   const [valorCredito, setValorCredito] = useState(
     tipocobro === "credito" ? total : 0
   );
+  
   //Valores a mostrar
   const [vuelto, setVuelto] = useState(0);
   const [restante, setRestante] = useState(0);
+  
   //datos de tipos de pago
   const { dataMetodosPago } = useMetodosPagoStore();
+  
   //datos de la store
   const { datausuarios } = useUsuariosStore();
   const { sucursalesItemSelectAsignadas } = useAsignacionCajaSucursalStore();
@@ -61,8 +66,10 @@ export const IngresoCobro = forwardRef((props, ref) => {
   const { datadetalleventa } = useDetalleVentasStore();
   const { dataComprobantes, itemComprobanteSelect, setItemComprobanteSelect } =
     useSerializacionStore();
-  //mostrar data de impresoras
+  
+    //mostrar data de impresoras
   const { dataImpresorasPorCaja } = useImpresorasStore();
+  
   //#region Clientes
   const {
     buscarCliPro,
@@ -85,8 +92,10 @@ export const IngresoCobro = forwardRef((props, ref) => {
       refetchOnWindowFocus: false,
     });
   //#endregion
+  
   //Mostrar cierres de caja
   const { dataCierreCaja } = useCierreCajaStore();
+  
   // Función para calcular vuelto y restante
   //Movientos de caja
   const { insertarMovCaja } = useMovCajaStore();

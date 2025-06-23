@@ -10,6 +10,7 @@ import { AnimatedGrid } from "../ui/animated/AnimatedGrid";
 import { ListAlmacenes } from "../organismos/AlmacenesDesign/ListAlmacenes";
 import {RegistrarAlmacen} from "../organismos/formularios/RegistrarAlmacen"
 import { useAlmacenesStore } from "../../store/AlmacenesStore";
+
 export const AlmacenesTemplate = () => {
   const { stateSucursal, setStateSucursal } = useSucursalesStore();
   const { stateAlmacen } = useAlmacenesStore();
@@ -30,7 +31,6 @@ export const AlmacenesTemplate = () => {
       <section className="area2">
         <ListAlmacenes />
       </section>
-      {/* <AnimatedGrid/> */}
     </Container>
   );
 };

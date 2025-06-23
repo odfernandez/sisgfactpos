@@ -19,6 +19,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import {InputText2} from "../formularios/InputText2"
 import { useFormattedDate } from "../../../hooks/useFormattedDate";
 import { useUsuariosStore } from "../../../store/UsuariosStore";
+
 export const SelectAlmacenModal = () => {
   const [cantidadInput, setCantidadInput] = useState(1);
   const fechaactual = useFormattedDate()
